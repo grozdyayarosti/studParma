@@ -1,0 +1,27 @@
+<!--Наследование главного шаблона-->
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>{{ title }}</h1>
+        <p>bebebebebe</p>
+        <button class="btn btn-warning">Кнопопчка</button>
+        <p>bebebebebe</p>
+
+        {% for el in values %}
+            {% if el == 'Some' %}
+                <p>{{ el|upper }}</p>
+            {% endif %}
+        {% endfor%}
+
+<!--        {% for el in obj %}-->
+<!--            <p>{{el}}</p>-->
+<!--        {% endfor%}-->
+
+    </div>
+
+<!--Подключение отдельного html-файла-->
+<!--    {% include 'main/test.html' %}-->
+{% endblock %}
