@@ -1,0 +1,28 @@
+<!--Наследование главного шаблона-->
+{% extends 'main/layout.html' %}
+
+{% block title %}Авторизация{% endblock %}
+
+{% block content %}
+    <div class="features">
+
+        <h1>Авторизация</h1>
+
+        {% if form.errors %}
+            <p>{{ form.errors.error }}</p>
+        {% endif %}
+
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            {{form}}
+            <br><br>
+            <button type="submit" class="btn btn-success">Войти</button>
+        </form>
+
+        <p>Ещё нет профиля?</p>
+        <a href="{% url 'register' %}" class="reg"><i class="fas fa-user-check"></i> Регистрация </a>
+    </div>
+
+<!--Подключение отдельного html-файла-->
+<!--    {% include 'main/test.html' %}-->
+{% endblock %}

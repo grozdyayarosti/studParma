@@ -69,3 +69,13 @@ form {
     width: 500px;
     margin-top: 50px;
 }
+
+.panel_name {
+    color: yellow;
+    border: 1px solid black;
+    text-align: center;
+}
+.reg {
+    color: blue;
+    text-align: center;
+}

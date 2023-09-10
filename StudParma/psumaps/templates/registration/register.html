@@ -1,0 +1,37 @@
+<!--Наследование главного шаблона-->
+{% extends 'main/layout.html' %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block content %}
+    <div class="features">
+
+        <h1>Регистрация</h1>
+
+<!--        {% for el in usersmodel %}-->
+<!--            <h1>{{ el.name }}</h1>-->
+<!--            <h1>{{ el.surname }}</h1>-->
+<!--            <h1>{{ el.login }}</h1>-->
+<!--            <h1>{{ el.password }}</h1>-->
+<!--            <h1>{{ el.is_admin }}</h1>-->
+<!--        {% endfor %}-->
+
+<!--        <h4>{{ article.anons }}</h4>-->
+<!--        <p>{{ article.date }}</p>-->
+<!--        <p>{{ article.full_text }}</p>-->
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form }}<br>
+<!--            {{ form }}<br>-->
+<!--            {{ form.name }}<br>-->
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+
+        <p>Уже зарегистрированы?</p>
+        <a href="{% url 'login' %}" class="reg"><i class="fas fa-user-check"></i> Войти </a>
+
+    </div>
+
+<!--Подключение отдельного html-файла-->
+<!--    {% include 'main/test.html' %}-->
+{% endblock %}

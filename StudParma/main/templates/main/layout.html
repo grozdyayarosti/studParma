@@ -15,6 +15,7 @@
     <aside>
         <img src="{% static 'main/img/re8.png' %}" width="200" height="100" alt="Красивый пляж">
         <span class="logo">Студпарма</span>
+        <p class="panel_name">{{user}}</p>
         <h3>Навигация</h3>
         <ul>
             <a href="{% url 'home' %}"><li><i class="fas fa-home"></i> Самая главная страница</li></a>
@@ -28,6 +29,13 @@
                     </button>
                 </li>
             </a>
+
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}"><li><i class="fas fa-user-check"></i> Выйти </li></a>
+            {% else %}
+                <a href="{% url 'login' %}"><li><i class="fas fa-user-check"></i> Войти </li></a>
+            {% endif %}
+
         </ul>
     </aside>
     <main>
